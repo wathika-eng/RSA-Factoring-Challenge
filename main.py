@@ -14,25 +14,30 @@ def factors(file):
     """
     Factorizes the numbers from test00 and prints their factorizations
     """
-    with open(file, "r") as nf:
-        """
-        open the file using py file handling
-        """
-        for line in nf:
+    try:
+        with open(file, "r") as nf:
             """
-            loop through the numbers
+            open the file using py file handling
             """
-            num = int(line)
-            for x in range(2, int(num ** 0.5) + 1):
+            for line in nf:
                 """
-                find the factorial
+                loop through the numbers
                 """
-                if num % x == 0:
+                num = int(line)
+                for x in range(2, int(num ** 0.5) + 1):
                     """
-                    stop when it gets to 0
+                    find the factorial
                     """
-                    print(f"{num}={x}*{num//x}")
-                    break
+                    if num % x == 0:
+                        """
+                        stop when it gets to 0
+                        """
+                        print(f"{num}={x}*{num//x}")
+                        break
+    except FileNotFoundError:
+        print("File not found, ensure test00 is present!")
+    except Exception as e:
+        print(f"{e}, failed!")
 
 
 if __name__ == "__main__":
