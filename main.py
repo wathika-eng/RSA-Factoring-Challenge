@@ -4,9 +4,10 @@ python in the env variables
 """
 
 import sys
+import time
 
 """
-module to import
+modules to import
 """
 
 
@@ -38,7 +39,8 @@ def factors(file):
         """
         handle errors
         """
-        print("File not found, ensure tests/test00 is present!")
+        print("File not found,ensure tests/test00 is present!")
+        print("Usage:factors <input_file>")
     except Exception as e:
         """
         additional errors
@@ -51,7 +53,8 @@ if __name__ == "__main__":
     run once
     """
     if len(sys.argv) != 2:
-        print("Usage: python factors.py <input_file>")
+        # print("Usage:factors <input_file>")
+        time.sleep(5)
         sys.exit(1)
     input_file = sys.argv[1]
     """
