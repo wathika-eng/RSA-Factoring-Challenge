@@ -35,8 +35,14 @@ def factors(file):
                         print(f"{num}={x}*{num//x}")
                         break
     except FileNotFoundError:
+        """
+        handle errors
+        """
         print("File not found, ensure test00 is present!")
     except Exception as e:
+        """
+        additional errors
+        """
         print(f"{e}, failed!")
 
 
