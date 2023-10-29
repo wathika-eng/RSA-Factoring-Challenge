@@ -39,7 +39,7 @@ def factors(file):
         """
         handle errors
         """
-        print("File not found,ensure tests/test00 is present!")
+        # print("File not found,ensure tests/test00 is present!")
         print("Usage:factors <input_file>")
     except Exception as e:
         """
